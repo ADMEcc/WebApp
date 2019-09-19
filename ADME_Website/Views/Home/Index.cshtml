@@ -1,0 +1,2070 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*VIDEO CONTAINER*@
+
+<div class="mycontainer container red-container no-padding">
+    <div class="responsive-rectangle-video center-block">
+        <div class="video-wrapper" style="padding-top: 3%; padding-bottom: 2%;">
+            <video id="video" style="display:none;">
+                <source src="~/media/ADME_mod2_hb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div id="scrn_video">
+                <img id="scrn_video_pic" src="~/images/screenshot-video.png" />
+            </div>
+            <div id="logo_video" class="logo-overlay">
+                <img class="video-logo-img" src="~/images/logo_icon_r@2x.png" />
+            </div>
+            @*<div class="overlay-adme flex center-align">
+                <p class="typie" style="margin-left: auto;
+        display: block;">ADME</p>
+            </div>*@
+            <div class="overlay-99 flex center-align">
+                <p class="typie" style="margin-left: auto;
+        display: block;">Made for the 99%</p>
+            </div>
+            <div id="playpause" class="playpause"></div>
+            <div class="overlay-killer flex center-align">
+                <p class="typie" style="margin-left: auto;
+        display: block;">The killer app for you to</p>
+            </div>
+            <div class="overlay flex center-align">
+                <p class="typie" id="word" style="margin-left: auto;
+        display: block;"></p><p class="blink" style="margin-right: auto;
+        display: block;">|</p>
+            </div>
+        </div>
+    </div>
+    <div class="row video-button-row flex-center" style="padding-left:18%; padding-right: 18%;">
+        @*<div class="col-md-2"></div>*@
+        <div class="col-md-3 flex-center">
+            <button class="btn btn-lg btn-block my-basic-button my-red-button" type="button" onclick="location.href ='Home/AMA'">AMA</button>
+        </div>
+        <div class="col-md-3 flex-center">
+            @*<button class="btn btn-lg btn-block my-basic-button my-red-button" type="button" onclick="download()">Whitepaper</button>*@
+            <a href="~/media/ADME-Whitepaper-1.pdf" download="ADME-Whitepaper.pdf" target="_blank" class="btn btn-lg btn-block my-basic-button my-red-button">Whitepaper</a>
+        </div>
+        <div class="col-md-3 flex-center">
+            <button id="token-sale-nav" class="btn btn-lg btn-block my-basic-button my-red-button" type="button" onclick="location.href ='Home/TokenSale'">Token Sale</button>
+            
+        </div>
+        <div class="col-md-3 flex-center">
+            @*<a href="Home/Donate" class="btn btn btn-lg btn-block my-basic-button my-red-button">Donate</a>*@
+            <button type="button" class="btn btn btn-lg btn-block my-basic-button my-red-button" onclick="location.href ='Home/News'">News</button>
+        </div>
+        @*<div class="col-md-3 flex-center">
+            <a href="" class="btn btn btn-lg btn-block my-basic-button my-red-button">mégegygomb</a>
+        </div>*@
+        @*<div class="col-md-2"></div>*@
+    </div>
+    <div id="video-button-nav" class="row video-button-row-xs flex-center">
+        <div class="col-xs-3 flex-center vid-but">
+            <button class="btn btn-lg btn-block my-basic-button my-red-button" onclick="location.href ='Home/AMA'" type="button">AMA</button>
+        </div>
+        <div class="col-xs-3 flex-center vid-but">
+            <button class="btn btn-lg btn-block my-basic-button my-red-button" type="button">Whitepaper</button>
+        </div>
+        <div class="col-xs-3 flex-center vid-but">
+            @*<a href="Home/Donate#token-sale-nav-div" id="token-sale-nav" class="btn btn btn-lg btn-block my-basic-button my-red-button">Token Sale</a>*@
+            <button id="token-sale-nav-xs" class="btn btn-lg btn-block my-basic-button my-red-button" type="button">Token Sale</button>
+        </div>
+        <div class="col-xs-3 flex-center vid-but">
+            @*<a href="Home/Donate" class="btn btn btn-lg btn-block my-basic-button my-red-button">Donate</a>*@
+            <button type="button" class="btn btn btn-lg btn-block my-basic-button my-red-button" onclick="location.href ='Home/Donate'">Donate</button>
+        </div>
+    </div>
+</div>
+<div class="mycontainer container white-container">
+    <div id="offering-nav-div" class="row" style="text-align:center; padding-top: 2%;">
+        <h1 class="red-title">ADME'S OFFERING</h1>
+    </div>
+    <div id="offering-button-row" class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-2" style="text-align:center;">
+            <a class="carousel-control-prev btn btn-lg btn-block my-basic-button my-red-button float-right" href="#carouselExampleSlidesOnly" role="button" data-slide="prev">
+                Users
+            </a>
+        </div>
+        <div class="col-md-2" style="text-align:center;">
+            <a class="carousel-control-next btn btn-lg btn-block my-basic-button my-purple-button float-left" href="#carouselExampleSlidesOnly" role="button" data-slide="next">
+                Companies
+            </a>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div id="offering-button-row-xs" class="row">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-3 vid-but" style="text-align:center;">
+            <button class="carousel-control-prev btn btn-lg btn-block my-basic-button my-red-button float-right" id="offering-user-xs">
+                Users
+            </button>
+        </div>
+        <div class="col-xs-3 vid-but" style="text-align:center;">
+            <button class="carousel-control-next btn btn-lg btn-block my-basic-button my-purple-button float-left" id="offering-comp-xs">
+                Companies
+            </button>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <div id="offering-flip-div" class="row my-site-padding my-site-padding-inside">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="false">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="col-lg-3" style="text-align:center;">
+                        <div class="flip-box center-block">
+                            <div class="flip-box-inner flex-center">
+                                @*CONTENT SHIFTING USER FRONT*@
+                                <div class="flip-box-front user-shift-front">
+                                    <div class="flex-square center-block">
+                                        <div class="square-content center-block" style="">
+                                            <h3 style="font-family: Norwester; color: #db2c2f">BASIC INCOME</h3>
+                                            <img style="width: 50%; display: block; margin: 0 auto;" src="~/images/Offering/basic.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                @*USER BACK*@
+                                <div id="user-back" class="flip-box-back user-shift-back">
+                                    <div class="flex-square center-block">
+                                        <div class="square-content center-block" style="display: flex; align-items: center; justify-content: center;">
+                                            <label class="flip-font">
+                                                ADME provides basic income based on your and your referrals’ performance.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3" style="text-align:center;">
+                        <div class="flip-box center-block">
+                            <div class="flip-box-inner flex-center">
+                                @*CONTENT SHIFTING USER FRONT*@
+                                <div class="flip-box-front user-shift-front">
+                                    <div class="flex-square center-block">
+                                        <div class="square-content center-block">
+                                            <h3 style="font-family: Norwester; color: #db2c2f">DATA MONETIZATION</h3>
+                                            <img style="width: 50%; display: block; margin: 0 auto;" src="~/images/Offering/Data_monetization.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                @*USER BACK*@
+                                <div id="user-back" class="flip-box-back user-shift-back">
+                                    <div class="flex-square center-block">
+                                        <div class="square-content center-block" style="display: flex; align-items: center; justify-content: center;">
+                                            <label class="flip-font">
+                                                You are targeted based on the information you provide, thus you are selling your data each time you watch an ad. ADME shares the profit with you for it.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3" style="text-align:center;">
+                        <div class="flip-box center-block">
+                            <div class="flip-box-inner flex-center">
+                                @*CONTENT SHIFTING USER FRONT*@
+                                <div class="flip-box-front user-shift-front">
+                                    <div class="flex-square center-block">
+                                        <div class="square-content center-block">
+                                            <h3 style="font-family: Norwester; color: #db2c2f">DATA SECURITY</h3>
+                                            <img style="width: 50%; display: block; margin: 0 auto;" src="~/images/Offering/Data_security.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                @*USER BACK*@
+                                <div id="user-back" class="flip-box-back user-shift-back">
+                                    <div class="flex-square center-block">
+                                        <div class="square-content center-block" style="display: flex; align-items: center; justify-content: center;">
+                                            <label class="flip-font">
+                                                Your private data will be stored securely on your phone at all time and your personal identity will not be revealed to the advertisers.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3" style="text-align:center;">
+                        <div class="flip-box center-block">
+                            <div class="flip-box-inner flex-center">
+                                @*CONTENT SHIFTING USER FRONT*@
+                                <div class="flip-box-front user-shift-front">
+                                    <div class="flex-square center-block">
+                                        <div class="square-content center-block">
+                                            <h3 style="font-family: Norwester; color: #db2c2f">FREEDOM OF CHOICE</h3>
+                                            <img style="width: 50%; display: block; margin: 0 auto;" src="~/images/Offering/selection_of_ads.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                @*USER BACK*@
+                                <div id="user-back" class="flip-box-back user-shift-back">
+                                    <div class="flex-square center-block">
+                                        <div class="square-content center-block" style="display: flex; align-items: center; justify-content: center;">
+                                            <label class="flip-font">
+                                                ADME gives you back the power to decide which ad you want to watch instead of algorithms telling you to. No more programmatic ads, no more AI driven advertising.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="col-lg-3" style="text-align:center;">
+                        <div class="flip-box center-block">
+                            <div class="flip-box-inner flex-center">
+                                @*CONTENT SHIFTING COMP FRONT*@
+                                <div class="flip-box-front comp-shift-front">
+                                    <div class="flex-square center-block">
+                                        <div class="square-content center-block" style="padding-top:10%;">
+                                            <h3 style="font-family: Norwester; color: #db2c2f">GLOBAL SURVEYS</h3>
+                                            <img style="width: 50%; display: block; margin: 0 auto;" src="~/images/Offering/Perform_global_surveys.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                @*COMP BACK*@
+                                <div class="flip-box-back comp-shift-back">
+                                    <div class="flex-square center-block">
+                                        <div class="square-content center-block" style="display: flex; align-items: center; justify-content: center;">
+                                            <label class="flip-font">
+                                                Ask questions from the users to determine who you want to target with your ads. Save a significant amount of money and time you spend on market research.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3" style="text-align:center;">
+                        <div class="flip-box center-block">
+                            <div class="flip-box-inner flex-center">
+                                @*CONTENT SHIFTING COMP FRONT*@
+                                <div class="flip-box-front comp-shift-front">
+                                    <div class="flex-square center-block">
+                                        <div class="square-content center-block" style="padding-top:10%;">
+                                            <h3 style="font-family: Norwester; color: #db2c2f">BRAND AWARENESS</h3>
+                                            <img style="width: 50%; display: block; margin: 0 auto;" src="~/images/Offering/increase_brand_awareness.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                @*COMP BACK*@
+                                <div class="flip-box-back comp-shift-back">
+                                    <div class="flex-square center-block">
+                                        <div class="square-content center-block" style="display: flex; align-items: center; justify-content: center;">
+                                            <label class="flip-font">
+                                                Perform A/B testing to evaluate potential growth opportunities on different markets, meanwhile increase brand awareness and customer loyalty.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3" style="text-align:center;">
+                        <div class="flip-box center-block">
+                            <div class="flip-box-inner flex-center">
+                                @*CONTENT SHIFTING COMP FRONT*@
+                                <div class="flip-box-front comp-shift-front">
+                                    <div class="flex-square center-block">
+                                        <div class="square-content center-block" style="padding-top:10%;">
+                                            <h3 style="font-family: Norwester; color: #db2c2f">LIFECYCLE</h3>
+                                            <img style="width: 50%; display: block; margin: 0 auto;" src="~/images/Offering/lifecycle.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                @*COMP BACK*@
+                                <div class="flip-box-back comp-shift-back">
+                                    <div class="flex-square center-block">
+                                        <div class="square-content center-block" style="display: flex; align-items: center; justify-content: center;">
+                                            <label class="flip-font">
+                                                Transparently monitor your entire sales cycle and measure the exact return on your investment, as every customer interaction is recorded on the blockchain.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3" style="text-align:center;">
+                        <div class="flip-box center-block">
+                            <div class="flip-box-inner flex-center">
+                                @*CONTENT SHIFTING COMP FRONT*@
+                                <div class="flip-box-front comp-shift-front">
+                                    <div class="flex-square center-block">
+                                        <div class="square-content center-block" style="padding-top:10%;">
+                                            <h3 style="font-family: Norwester; color: #db2c2f">ELIMINATE FRAUD</h3>
+                                            <img style="width: 50%; display: block; margin: 0 auto;" src="~/images/Offering/Eliminate.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                @*COMP BACK*@
+                                <div class="flip-box-back comp-shift-back">
+                                    <div class="flex-square center-block">
+                                        <div class="square-content center-block" style="display: flex; align-items: center; justify-content: center;">
+                                            <label class="flip-font">
+                                                ADME validates its userbase so you can choose whether you want to advertise only to validated users or consider targeting invalidated ones to maximize outreach.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="offering-mobile">
+
+        <div id="offering-flip-div-01-xs" class="row my-site-padding my-site-padding-inside">
+            <div id="offering-left-user" class="left-red-arrow-overlay flex-center">
+                <img style="width:100%;" src="~/images/left_red_arrow.png" />
+            </div>
+            <div id="offering-right-user" class="right-red-arrow-overlay flex-center">
+                <img style="width:100%;" src="~/images/right_red_arrow.png" />
+            </div>
+            <div id="offering-user-carousel" class="carousel slide" data-ride="carousel" data-interval="false" style="padding-top:4%;">
+
+                <div class="carousel-inner">
+
+                    <div class="item active flex-center">
+                        <div class="flex-center" style="text-align:center;">
+                            <div class="flip-box center-block flex-center">
+
+                                <div class="flip-box-inner flex-center">
+                                    @*CONTENT SHIFTING USER FRONT*@
+                                    <div class="flip-box-front user-shift-front">
+                                        <div class="flex-square center-block">
+                                            <div class="square-content center-block" style="padding-top:15%;">
+                                                <h3 style="font-family: Norwester; color: #db2c2f">BASIC INCOME</h3>
+                                                <img style="width: 50%; display: block; margin: 0 auto;" src="~/images/Offering/basic.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*USER BACK*@
+                                    <div id="user-back" class="flip-box-back user-shift-back">
+                                        <div class="flex-square center-block">
+                                            <div class="square-content center-block" style="display: flex; align-items: center; justify-content: center;">
+                                                <label style="font-family: Kelson; font-size:16px; font-weight: normal; color: #171025;">
+                                                    ADME provides basic income based on your and your referrals’ performance.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img style="width:5%;" src="~/images/right_red_arrow.png" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="flip-box center-block">
+                                <div class="flip-box-inner flex-center">
+                                    @*CONTENT SHIFTING USER FRONT*@
+                                    <div class="flip-box-front user-shift-front">
+                                        <div class="flex-square center-block">
+                                            <div class="square-content center-block" style="padding-top:15%;">
+                                                <h3 style="font-family: Norwester; color: #db2c2f">DATA MONETIZATION</h3>
+                                                <img style="width: 50%; display: block; margin: 0 auto;" src="~/images/Offering/Data_monetization.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*USER BACK*@
+                                    <div id="user-back" class="flip-box-back user-shift-back">
+                                        <div class="flex-square center-block">
+                                            <div class="square-content center-block" style="display: flex; align-items: center; justify-content: center;">
+                                                <label style="font-family: Kelson; font-size:16px; font-weight: normal; color: #171025;">
+                                                    You are targeted based on the information you provide, thus you are selling your data each time you watch an ad. ADME shares the profit with you for it.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="flip-box center-block">
+                                <div class="flip-box-inner flex-center">
+                                    @*CONTENT SHIFTING USER FRONT*@
+                                    <div class="flip-box-front user-shift-front">
+                                        <div class="flex-square center-block">
+                                            <div class="square-content center-block" style="padding-top:15%;">
+                                                <h3 style="font-family: Norwester; color: #db2c2f">DATA SECURITY</h3>
+                                                <img style="width: 50%; display: block; margin: 0 auto;" src="~/images/Offering/Data_security.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*USER BACK*@
+                                    <div id="user-back" class="flip-box-back user-shift-back">
+                                        <div class="flex-square center-block">
+                                            <div class="square-content center-block" style="display: flex; align-items: center; justify-content: center;">
+                                                <label style="font-family: Kelson; font-size:16px; font-weight: normal; color: #171025; padding-top:1%;">
+                                                    Your private data will be stored securely on your phone at all time and your personal identity will not be revealed to the advertisers.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="flip-box center-block">
+                                <div class="flip-box-inner flex-center">
+                                    @*CONTENT SHIFTING USER FRONT*@
+                                    <div class="flip-box-front user-shift-front">
+                                        <div class="flex-square center-block">
+                                            <div class="square-content center-block" style="padding-top:15%;">
+                                                <h3 style="font-family: Norwester; color: #db2c2f">FREEDOM OF CHOICE</h3>
+                                                <img style="width: 50%; display: block; margin: 0 auto;" src="~/images/Offering/selection_of_ads.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*USER BACK*@
+                                    <div id="user-back" class="flip-box-back user-shift-back">
+                                        <div class="flex-square center-block">
+                                            <div class="square-content center-block" style="display: flex; align-items: center; justify-content: center;">
+                                                <label style="font-family: Kelson; font-size:16px; font-weight: normal; color: #171025; padding-top:1%;">
+                                                    ADME gives you back the power to decide which ad you want to watch instead of algorithms telling you to. No more programmatic ads, no more AI driven advertising.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="offering-flip-div-02-xs" class="row my-site-padding my-site-padding-inside">
+            <div id="offering-left-comp" class="left-red-arrow-overlay flex-center">
+                <img style="width:100%;" src="~/images/left_red_arrow.png" />
+            </div>
+            <div id="offering-right-comp" class="right-red-arrow-overlay flex-center">
+                <img style="width:100%;" src="~/images/right_red_arrow.png" />
+            </div>
+            <div id="offering-user-carousel-comp" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner" style="padding-top:4%;">
+                    <div class="item active flex-center">
+                        <div class="flex-center" style="text-align:center;">
+                            <div class="flip-box center-block">
+                                <div class="flip-box-inner flex-center">
+                                    @*CONTENT SHIFTING COMP FRONT*@
+                                    <div class="flip-box-front comp-shift-front">
+                                        <div class="flex-square center-block">
+                                            <div class="square-content center-block" style="padding-top:10%;">
+                                                <h3 style="font-family: Norwester; color: #db2c2f">GLOBAL SURVEYS</h3>
+                                                <img style="width: 50%; display: block; margin: 0 auto;" src="~/images/Offering/Perform_global_surveys.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*COMP BACK*@
+                                    <div class="flip-box-back comp-shift-back">
+                                        <div class="flex-square center-block">
+                                            <div class="square-content center-block" style="display: flex; align-items: center; justify-content: center;">
+                                                <label style="font-family: Kelson; font-size:16px; font-weight: normal; color: #171025; padding-top:1%;">
+                                                    Ask questions from the users to determine who you want to target with your ads. Save a significant amount of money and time you spend on market research.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="flip-box center-block">
+                                <div class="flip-box-inner flex-center">
+                                    @*CONTENT SHIFTING COMP FRONT*@
+                                    <div class="flip-box-front comp-shift-front">
+                                        <div class="flex-square center-block">
+                                            <div class="square-content center-block" style="padding-top:10%;">
+                                                <h3 style="font-family: Norwester; color: #db2c2f">BRAND AWARENESS</h3>
+                                                <img style="width: 50%; display: block; margin: 0 auto;" src="~/images/Offering/increase_brand_awareness.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*COMP BACK*@
+                                    <div class="flip-box-back comp-shift-back">
+                                        <div class="flex-square center-block">
+                                            <div class="square-content center-block" style="display: flex; align-items: center; justify-content: center;">
+                                                <label style="font-family: Kelson; font-size:16px; font-weight: normal; color: #171025; padding-top:1%;">
+                                                    Perform A/B testing to evaluate potential growth opportunities on different markets, meanwhile increase brand awareness and customer loyalty.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="flip-box center-block">
+                                <div class="flip-box-inner flex-center">
+                                    @*CONTENT SHIFTING COMP FRONT*@
+                                    <div class="flip-box-front comp-shift-front">
+                                        <div class="flex-square center-block">
+                                            <div class="square-content center-block" style="padding-top:10%;">
+                                                <h3 style="font-family: Norwester; color: #db2c2f">LIFECYCLE</h3>
+                                                <img style="width: 50%; display: block; margin: 0 auto;" src="~/images/Offering/lifecycle.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*COMP BACK*@
+                                    <div class="flip-box-back comp-shift-back">
+                                        <div class="flex-square center-block">
+                                            <div class="square-content center-block" style="display: flex; align-items: center; justify-content: center;">
+                                                <label style="font-family: Kelson; font-size:16px; font-weight: normal; color: #171025; padding-top:1%;">
+                                                    Transparently monitor your entire sales cycle and measure the exact return on your investment, as every customer interaction is recorded on the blockchain.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="flip-box center-block">
+                                <div class="flip-box-inner flex-center">
+                                    @*CONTENT SHIFTING COMP FRONT*@
+                                    <div class="flip-box-front comp-shift-front">
+                                        <div class="flex-square center-block">
+                                            <div class="square-content center-block" style="padding-top:10%;">
+                                                <h3 style="font-family: Norwester; color: #db2c2f">ELIMINATE FRAUD</h3>
+                                                <img style="width: 50%; display: block; margin: 0 auto;" src="~/images/Offering/Eliminate.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*COMP BACK*@
+                                    <div class="flip-box-back comp-shift-back">
+                                        <div class="flex-square center-block">
+                                            <div class="square-content center-block" style="display: flex; align-items: center; justify-content: center;">
+                                                <label style="font-family: Kelson; font-size:16px; font-weight: normal; color: #171025; padding-top:1%;">
+                                                    ADME validates its userbase so you can choose whether you want to advertise only to validated users or consider targeting invalidated ones to maximize outreach.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="mycontainer container red-container">
+    <div id="how-nav-div" class="row" style="text-align:center; padding-top: 2%;">
+        <h1 class="white-title">HOW DOES IT WORK?</h1>
+    </div>
+    <div id="how-button-row" class="row" style="padding-top: 2%;">
+        <div class="col-md-4"></div>
+        <div class="col-md-2" style="text-align:center;">
+            <a class="carousel-control-prev btn btn-lg btn-block my-basic-button my-red-button float-right" href="#how-carousel" role="button" data-slide="prev">
+                Users
+            </a>
+        </div>
+        <div class="col-md-2" style="text-align:center;">
+            <a class="carousel-control-next btn btn-lg btn-block my-basic-button my-purple-button float-left" href="#how-carousel" role="button" data-slide="next">
+                Companies
+            </a>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div id="how-button-row-xs" class="row">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-3 vid-but" style="text-align:center;">
+            <button class="carousel-control-prev btn btn-lg btn-block my-basic-button my-red-button float-right" id="how-user-xs">
+                Users
+            </button>
+        </div>
+        <div class="col-xs-3 vid-but" style="text-align:center;">
+            <button class="carousel-control-next btn btn-lg btn-block my-basic-button my-purple-button float-left" id="how-comp-xs">
+                Companies
+            </button>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <div id="how-squares" class="row" style="text-align:center; padding-top: 4%; padding-left: 10%; padding-right: 10%;">
+        <div class="col-lg-1">
+        </div>
+        <div class="col-lg-2" style="text-align:center;">
+            <div class="lineBox" style="position: absolute;height:auto;left: 0;top: 50%;width:100%;height: 50%;">
+                <svg class="line" viewBox="00 00 150 10" preserveAspectRatio="none">
+                    <line x1="70" y1="00" x2="300" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                </svg>
+            </div>
+            <div class="flex-square-small center-block">
+                <div class="square-content center-block flex-square-small-content">
+                    <h3 style="font-family: Norwester; color: #db2c2f">1</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2" style="text-align:center;">
+            <div class="lineBox" style="position: absolute;height:auto;left: 0;top: 50%;width:100%;height: 50%;">
+                <svg class="line" viewBox="00 00 150 10" preserveAspectRatio="none">
+                    <line x1="00" y1="00" x2="70" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                    <line x1="70" y1="00" x2="300" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                </svg>
+            </div>
+            <div class="flex-square-small center-block">
+                <div class="square-content flex-square-small-content">
+                    <h3 style="font-family: Norwester; color: #db2c2f">2</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2" style="text-align:center;">
+            <div class="lineBox" style="position: absolute;height:auto;left: 0;top: 50%;width:100%;height: 50%;">
+                <svg class="line" viewBox="00 00 150 10" preserveAspectRatio="none">
+                    <line x1="00" y1="00" x2="70" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                    <line x1="70" y1="00" x2="300" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                </svg>
+            </div>
+            <div class="flex-square-small center-block">
+                <div class="square-content flex-square-small-content">
+                    <h3 style="font-family: Norwester; color: #db2c2f">3</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2" style="text-align:center;">
+            <div class="lineBox" style="position: absolute;height:auto;left: 0;top: 50%;width:100%;height: 50%;">
+                <svg class="line" viewBox="00 00 150 10" preserveAspectRatio="none">
+                    <line x1="00" y1="00" x2="70" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                    <line x1="70" y1="00" x2="300" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                </svg>
+            </div>
+            <div class="flex-square-small center-block">
+                <div class="square-content flex-square-small-content">
+                    <h3 style="font-family: Norwester; color: #db2c2f">4</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2" style="text-align:center;">
+            <div class="lineBox" style="position: absolute;height:auto;left: 0;top: 50%;width:100%;height: 50%;">
+                <svg class="line" viewBox="00 00 150 10" preserveAspectRatio="none">
+                    <line x1="00" y1="00" x2="70" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                </svg>
+            </div>
+            <div class="flex-square-small center-block">
+                <div class="square-content flex-square-small-content">
+                    <h3 style="font-family: Norwester; color: #db2c2f">5</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div id="how-row" class="row" style="text-align:center; padding-top: 4%; padding-left: 10%; padding-right: 10%;">
+        <div id="how-carousel" class="carousel slide" data-ride="carousel" data-interval="false" style="text-align:center;">
+            <div class="carousel-inner" style="overflow:visible;">
+                <div class="item active carousel-height">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-2" style="text-align:center;">
+                        <div class="flex-rectangle-how center-block">
+                            <div class="square-content" style="padding-top:10%;">
+                                <img style="width: 40%; display: block; margin: 0 auto;" src="~/images/How_does_it_work/list.png">
+                                <img style="width: 40%; display: block; margin: 0 auto;" src="~/images/How_does_it_work/play.png">
+                            </div>
+                        </div>
+                        <h3 class="how-h3">Fill out surveys or watch ads</h3>
+                    </div>
+                    <div class="col-lg-2" style="text-align:center;">
+                        <div class="flex-rectangle-how center-block">
+                            <div class="square-content" style="display: flex; align-items: center; justify-content: center;">
+                                <img style="width: 60%; display: block; margin: 0 auto; " src="~/images/How_does_it_work/electro_wallet.png">
+                            </div>
+                        </div>
+                        <h3 class="how-h3">Get paid</h3>
+                    </div>
+                    <div class="col-lg-2" style="text-align:center;">
+                        <div class="flex-rectangle-how center-block">
+                            <div class="square-content" style="display: flex; align-items: center; justify-content: center;">
+                                <img style="width: 60%; display: block; margin: 0 auto;" src="~/images/How_does_it_work/visit.png">
+                            </div>
+                        </div>
+                        <h3 class="how-h3">Visit the advertiser’s website</h3>
+                    </div>
+                    <div class="col-lg-2" style="text-align:center;">
+                        <div class="flex-rectangle-how center-block">
+                            <div class="square-content" style="display: flex; align-items: center; justify-content: center;">
+                                <img style="width: 60%; display: block; margin: 0 auto;" src="~/images/How_does_it_work/electro_wallet.png">
+                            </div>
+                        </div>
+                        <h3 class="how-h3">Get paid</h3>
+                    </div>
+                    <div class="col-lg-2" style="text-align:center;">
+                        <div class="flex-rectangle-how center-block">
+                            <div class="square-content" style="display: flex; align-items: center; justify-content: center;">
+                                <img style="width: 60%; display: block; margin: 0 auto;" src="~/images/How_does_it_work/buy_discounts.png">
+                            </div>
+                        </div>
+                        <h3 class="how-h3">Buy discounts for tokens</h3>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+                <div class="item carousel-height">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-2" style="text-align:center;">
+                        <div class="flex-rectangle-how center-block">
+                            <div class="square-content" style="padding-top:10%;">
+                                <img style="width: 40%; display: block; margin: 0 auto;" src="~/images/How_does_it_work/list.png">
+                                <img style="width: 40%; display: block; margin: 0 auto;" src="~/images/How_does_it_work/play.png">
+                            </div>
+                        </div>
+                        <h3 class="how-h3">Define your campaign</h3>
+                    </div>
+                    <div class="col-lg-2" style="text-align:center;">
+                        <div class="flex-rectangle-how center-block">
+                            <div class="square-content" style="display: flex; align-items: center; justify-content: center;">
+                                <img style="width: 60%; display: block; margin: 0 auto; " src="~/images/Company/audience.png">
+                            </div>
+                        </div>
+                        <h3 class="how-h3">Select your audience</h3>
+                    </div>
+                    <div class="col-lg-2" style="text-align:center;">
+                        <div class="flex-rectangle-how center-block">
+                            <div class="square-content" style="display: flex; align-items: center; justify-content: center;">
+                                <img style="width: 60%; display: block; margin: 0 auto;" src="~/images/Company/Calculator.png">
+                            </div>
+                        </div>
+                        <h3 class="how-h3">Price calculation and start</h3>
+                    </div>
+                    <div class="col-lg-2" style="text-align:center;">
+                        <div class="flex-rectangle-how center-block">
+                            <div class="square-content" style="display: flex; align-items: center; justify-content: center;">
+                                <img style="width: 60%; display: block; margin: 0 auto;" src="~/images/Company/Statiscits.png">
+                            </div>
+                        </div>
+                        <h3 class="how-h3">Receive Statistics about your campaign at the end</h3>
+                    </div>
+                    <div class="col-lg-2" style="text-align:center;">
+                        <div class="flex-rectangle-how center-block">
+                            <div class="square-content" style="display: flex; align-items: center; justify-content: center;">
+                                <img style="width: 60%; display: block; margin: 0 auto;" src="~/images/Company/discount.png">
+                            </div>
+                        </div>
+                        <h3 class="how-h3">Offer discounts for tokens for the selected users</h3>
+                    </div>
+                    <div class="col-lg-1"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div id="how-mobile" style="height:115vw;">
+
+
+        <div id="how-squares-div-01-xs" class="row ">
+            @*<div id="how-user-square-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner">
+                    <div class="item active">
+                    </div>
+                </div>
+            </div>*@
+
+            
+
+            <div id="how-left-user" class="left-white-arrow-overlay flex-center">
+                <img style="width:100%;" src="~/images/left_white_arrow.png" />
+            </div>
+            <div id="how-right-user" class="right-white-arrow-overlay flex-center">
+                <img style="width:100%;" src="~/images/right_white_arrow.png" />
+            </div>
+            <div id="how-user-square-carousel" class="carousel slide" data-ride="carousel" data-interval="false" style="width:100%;">
+                <div class="carousel-inner" style="width:100%;">
+                    <div class="item active" style="width:100%;">
+                        <div style="text-align:center; width:100%;">
+                            <div class="how-mobile-cards" style="text-align:center; width:100%;">
+                                <div class="lineBox">
+                                    <svg class="line" viewBox="00 00 150 10" preserveAspectRatio="none">
+                                        <line x1="70" y1="00" x2="300" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                                    </svg>
+                                </div>
+                                @*<div class="lineBox" style="position: absolute;height:auto;left: 0;top: 26%;width:100%;height: 5%;">
+                                    <svg class="line" viewBox="00 00 150 10" preserveAspectRatio="none">
+                                        <line x1="70" y1="00" x2="300" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                                    </svg>
+                                </div>*@
+                                <div class="flex-square-small center-block">
+                                    <div class="square-content center-block flex-square-small-content">
+                                        <h3 style="font-family: Norwester; color: #db2c2f">1</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="how-mobile-cards" style="text-align:center;">
+                                <div class="lineBox">
+                                    <svg class="line" viewBox="00 00 150 10" preserveAspectRatio="none">
+                                        <line x1="00" y1="00" x2="70" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                                        <line x1="70" y1="00" x2="300" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                                    </svg>
+                                </div>
+                                <div class="flex-square-small center-block">
+                                    <div class="square-content flex-square-small-content">
+                                        <h3 style="font-family: Norwester; color: #db2c2f">2</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="how-mobile-cards" style="text-align:center;">
+                                <div class="lineBox">
+                                    <svg class="line" viewBox="00 00 150 10" preserveAspectRatio="none">
+                                        <line x1="00" y1="00" x2="70" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                                        <line x1="70" y1="00" x2="300" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                                    </svg>
+                                </div>
+                                <div class="flex-square-small center-block">
+                                    <div class="square-content flex-square-small-content">
+                                        <h3 style="font-family: Norwester; color: #db2c2f">3</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="how-mobile-cards" style="text-align:center;">
+                                <div class="lineBox">
+                                    <svg class="line" viewBox="00 00 150 10" preserveAspectRatio="none">
+                                        <line x1="00" y1="00" x2="70" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                                        <line x1="70" y1="00" x2="300" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                                    </svg>
+                                </div>
+                                <div class="flex-square-small center-block">
+                                    <div class="square-content flex-square-small-content">
+                                        <h3 style="font-family: Norwester; color: #db2c2f">4</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="how-mobile-cards" style="text-align:center;">
+                                <div class="lineBox">
+                                    <svg class="line" viewBox="00 00 150 10" preserveAspectRatio="none">
+                                        <line x1="00" y1="00" x2="70" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                                    </svg>
+                                </div>
+                                <div class="flex-square-small center-block">
+                                    <div class="square-content flex-square-small-content">
+                                        <h3 style="font-family: Norwester; color: #db2c2f">5</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="how-squares-div-02-xs" class="row">
+            <div id="how-left-comp" class="left-white-arrow-overlay flex-center">
+                <img style="width:100%;" src="~/images/left_white_arrow.png" />
+            </div>
+            <div id="how-right-comp" class="right-white-arrow-overlay flex-center">
+                <img style="width:100%;" src="~/images/right_white_arrow.png" />
+            </div>
+            <div id="how-comp-square-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div style="text-align:center;">
+                            <div class="how-mobile-cards" style="text-align:center;">
+                                <div class="lineBox">
+                                    <svg class="line" viewBox="00 00 150 10" preserveAspectRatio="none">
+                                        <line x1="70" y1="00" x2="300" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                                    </svg>
+                                </div>
+                                <div class="flex-square-small center-block">
+                                    <div class="square-content center-block flex-square-small-content">
+                                        <h3 style="font-family: Norwester; color: #db2c2f">1</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="how-mobile-cards" style="text-align:center;">
+                                <div class="lineBox">
+                                    <svg class="line" viewBox="00 00 150 10" preserveAspectRatio="none">
+                                        <line x1="00" y1="00" x2="70" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                                        <line x1="70" y1="00" x2="300" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                                    </svg>
+                                </div>
+                                <div class="flex-square-small center-block">
+                                    <div class="square-content flex-square-small-content">
+                                        <h3 style="font-family: Norwester; color: #db2c2f">2</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="how-mobile-cards" style="text-align:center;">
+                                <div class="lineBox">
+                                    <svg class="line" viewBox="00 00 150 10" preserveAspectRatio="none">
+                                        <line x1="00" y1="00" x2="70" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                                        <line x1="70" y1="00" x2="300" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                                    </svg>
+                                </div>
+                                <div class="flex-square-small center-block">
+                                    <div class="square-content flex-square-small-content">
+                                        <h3 style="font-family: Norwester; color: #db2c2f">3</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="how-mobile-cards" style="text-align:center;">
+                                <div class="lineBox">
+                                    <svg class="line" viewBox="00 00 150 10" preserveAspectRatio="none">
+                                        <line x1="00" y1="00" x2="70" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                                        <line x1="70" y1="00" x2="300" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                                    </svg>
+                                </div>
+                                <div class="flex-square-small center-block">
+                                    <div class="square-content flex-square-small-content">
+                                        <h3 style="font-family: Norwester; color: #db2c2f">4</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="how-mobile-cards" style="text-align:center;">
+                                <div class="lineBox">
+                                    <svg class="line" viewBox="00 00 150 10" preserveAspectRatio="none">
+                                        <line x1="00" y1="00" x2="70" y2="00" style="stroke:#ffffff;stroke-width:2;"></line>
+                                    </svg>
+                                </div>
+                                <div class="flex-square-small center-block">
+                                    <div class="square-content flex-square-small-content">
+                                        <h3 style="font-family: Norwester; color: #db2c2f">5</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div id="how-card-div-01-xs" class="row my-site-padding my-site-padding-inside">
+            <div id="how-user-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div style="text-align:center;">
+                            <div class="how-mobile-cards" style="text-align:center;">
+                                <div class="flex-rectangle-how center-block">
+                                    <div class="square-content" style="padding-top:10%;">
+                                        <img style="width: 40%; display: block; margin: 0 auto;" src="~/images/How_does_it_work/list.png">
+                                        <img style="width: 40%; display: block; margin: 0 auto;" src="~/images/How_does_it_work/play.png">
+                                    </div>
+                                </div>
+                                <h3 style="font-family: Kelson;color: #ffffff; font-size:20px; padding-left:5%; padding-right:5%; padding-top:2%;">Fill out surveys or watch ads</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="how-mobile-cards" style="text-align:center;">
+                                <div class="flex-rectangle-how center-block">
+                                    <div class="square-content" style="display: flex; align-items: center; justify-content: center;">
+                                        <img style="width: 60%; display: block; margin: 0 auto; " src="~/images/How_does_it_work/electro_wallet.png">
+                                    </div>
+                                </div>
+                                <h3 style="font-family: Kelson; color: #ffffff; font-size:20px; padding-left:5%; padding-right:5%; padding-top:2%;">Get paid</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="how-mobile-cards" style="text-align:center;">
+                                <div class="flex-rectangle-how center-block">
+                                    <div class="square-content" style="display: flex; align-items: center; justify-content: center;">
+                                        <img style="width: 60%; display: block; margin: 0 auto;" src="~/images/How_does_it_work/visit.png">
+                                    </div>
+                                </div>
+                                <h3 style="font-family: Kelson; color: #ffffff; font-size:20px; padding-left:5%; padding-right:5%; padding-top:2%;">Visit the advertiser’s website</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="how-mobile-cards" style="text-align:center;">
+                                <div class="flex-rectangle-how center-block">
+                                    <div class="square-content" style="display: flex; align-items: center; justify-content: center;">
+                                        <img style="width: 60%; display: block; margin: 0 auto;" src="~/images/How_does_it_work/electro_wallet.png">
+                                    </div>
+                                </div>
+                                <h3 style="font-family: Kelson; color: #ffffff; font-size:20px; padding-left:5%; padding-right:5%; padding-top:2%;">Get paid</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="how-mobile-cards" style="text-align:center;">
+                                <div class="flex-rectangle-how center-block">
+                                    <div class="square-content" style="display: flex; align-items: center; justify-content: center;">
+                                        <img style="width: 60%; display: block; margin: 0 auto;" src="~/images/How_does_it_work/buy_discounts.png">
+                                    </div>
+                                </div>
+                                <h3 style="font-family: Kelson; color: #ffffff; font-size:20px; padding-left:5%; padding-right:5%; padding-top:2%;">Buy discounts for tokens</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div id="how-card-div-02-xs" class="row my-site-padding my-site-padding-inside">
+            <div id="how-user-carousel-comp" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner">
+                    <div class="item active flex-center">
+                        <div style="text-align:center;">
+                            <div class="how-mobile-cards" style="text-align:center;">
+                                <div class="flex-rectangle-how center-block">
+                                    <div class="square-content" style="padding-top:10%;">
+                                        <img style="width: 40%; display: block; margin: 0 auto;" src="~/images/How_does_it_work/list.png">
+                                        <img style="width: 40%; display: block; margin: 0 auto;" src="~/images/How_does_it_work/play.png">
+                                    </div>
+                                </div>
+                                <h3 style="font-family: Kelson;color: #ffffff; font-size:20px; padding-left:5%; padding-right:5%; padding-top:2%;">Define your campaign</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="how-mobile-cards" style="text-align:center;">
+                                <div class="flex-rectangle-how center-block">
+                                    <div class="square-content" style="display: flex; align-items: center; justify-content: center;">
+                                        <img style="width: 60%; display: block; margin: 0 auto; " src="~/images/Company/audience.png">
+                                    </div>
+                                </div>
+                                <h3 style="font-family: Kelson;color: #ffffff; font-size:20px; padding-left:5%; padding-right:5%; padding-top:2%;">Select your audience</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="how-mobile-cards" style="text-align:center;">
+                                <div class="flex-rectangle-how center-block">
+                                    <div class="square-content" style="display: flex; align-items: center; justify-content: center;">
+                                        <img style="width: 60%; display: block; margin: 0 auto;" src="~/images/Company/Calculator.png">
+                                    </div>
+                                </div>
+                                <h3 style="font-family: Kelson;color: #ffffff; font-size:20px; padding-left:5%; padding-right:5%; padding-top:2%;">Price calculation and start</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="text-align:center;">
+                            <div class="how-mobile-cards" style="text-align:center;">
+
+                                <div class="flex-rectangle-how center-block">
+                                    <div class="square-content" style="display: flex; align-items: center; justify-content: center;">
+                                        <img style="width: 60%; display: block; margin: 0 auto;" src="~/images/Company/Statiscits.png">
+                                    </div>
+                                </div>
+                                <h3 style="font-family: Kelson;color: #ffffff; font-size:20px; padding-left:5%; padding-right:5%; padding-top:2%;">Receive Statistics about your campaign at the end</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item">
+                            <div style="text-align:center;">
+                                <div class="how-mobile-cards" style="text-align:center;">
+                                    <div class="flex-rectangle-how center-block">
+                                        <div class="square-content" style="display: flex; align-items: center; justify-content: center;">
+                                            <img style="width: 60%; display: block; margin: 0 auto;" src="~/images/Company/discount.png">
+                                        </div>
+                                    </div>
+                                    <h3 style="font-family: Kelson;color: #ffffff; font-size:20px; padding-left:5%; padding-right:5%; padding-top:2%;">Offer discounts for tokens for the selected users</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <svg class="line" viewBox="00 00 150 10" preserveAspectRatio="none">
+        </svg>
+    </div>
+</div>
+
+
+
+<div class="mycontainer container" style="width: 100vw; padding-bottom:4%; background: #ffffff;">
+    <div id="pbbi-nav-div" class="row" style="text-align:center; padding-top: 2%;">
+        <h1 class="red-title">PERFORMANCE BASED BASIC INCOME</h1>
+    </div>
+    <div class="row" style="text-align:center; padding-top: 1%;">
+        <div class="col-lg-12"> <label class="dark-md-text">The slightly modified version of the Universal Basic Income</label></div>
+    </div>
+    <div class="row" style="text-align:center; padding-left:5%; padding-right:5%; padding-top:1%;">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <label class="dark-sm-text">
+                ADME provides performance based basic income as a reward to its users who are inviting others to join the network. Once your referrals validate themselves, you will receive up to 5% of the ad’s price that they watched. The maximum amount of income you can get is tied to your performance. ADME will utilize the Stellar Blockchain to summarize the performances and pay the users. The basic income will be distributed on a daily basis.
+            </label>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+    <div id="steps">
+        <div class="row" style="text-align:center; padding-top:1.5%; padding-left: 17%; padding-right: 17%;">
+            <div class="col-sm-6">
+                <h1 class="float-left red-title">Step 1</h1>
+            </div>
+            <div class="col-sm-6">
+                <h1 class="float-right red-title">Step 2</h1>
+            </div>
+        </div>
+        <div class="row" style="text-align:center; padding-left: 17%; padding-right: 17%;">
+            <div class="col-sm-6">
+                <h1 class="float-left dark-md-text">Invite others to join the network</h1>
+            </div>
+            <div class="col-sm-6">
+                <h1 class="float-right dark-md-text">Get paid 1-5% after the ads they watch</h1>
+            </div>
+        </div>
+        <div class="row row-eq-height" style="text-align:center; padding-top:1.5%; padding-left: 18%; padding-right: 18%;">
+            <div class="col-lg-5" style="box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.16);">
+                <img class="float-right" src="~/images/Performance/Performance_01.png" style="width:100%; height:100%; max-width:100%; max-height:100%; float:right;" />
+            </div>
+            <div class="col-lg-2">
+
+            </div>
+            <div class="col-lg-5" style="box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.16);">
+                <img class="float-right" src="~/images/Performance/Performance_02.png" style="width:100%; height:100%; max-width:100%; max-height:100%; float:right;" />
+            </div>
+        </div>
+    </div>
+    <div id="steps-mobile" class="row" style="text-align:center; padding-top:1.5%; padding-left: 17%; padding-right: 17%;">
+        <div id="steps-left" class="left-red-arrow-overlay-steps flex-center">
+            <img style="width:100%;" src="~/images/left_red_arrow.png" />
+        </div>
+        <div id="steps-right" class="right-red-arrow-overlay-steps flex-center">
+            <img style="width:100%;" src="~/images/right_red_arrow.png" />
+        </div>
+        <div id="steps-text-mobile-carousel" class="carousel slide" data-ride="carousel" data-interval="false" style="height:62vw;">
+            <div class="carousel-inner" style="height:100%;">
+                <div class="item active" style="height:100%;">
+                    <div style="text-align:center;">
+                        <h1 class="red-title">Step 1</h1>
+                        <h1 class="dark-md-text">Invite others to join the network</h1>
+                    </div>
+                    <div class="flex-center"  style="text-align:center; padding-top:10%; padding-bottom:8%;">
+                        <img src="~/images/Performance/Performance_01.png" style="box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.16); width:90%; height:90%; max-width:100%; max-height:100%;" />
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="text-align:center;">
+                        <h1 class="red-title">Step 2</h1>
+                        <h1 class="dark-md-text">Get paid 1-5% after the ads they watch</h1>
+                    </div>
+                    <div class="flex-center" style="text-align:center; padding-top:4%; padding-bottom:10%;">
+                        <img src="~/images/Performance/Performance_02.png" style="box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.16); width:90%; height:90%; max-width:100%; max-height:100%;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mycontainer container" style=" width: 100vw; padding-top: 2%;">
+    <div class="row" style="text-align:center; padding-top: 2%;">
+        <h1 class="red-title">CALCULATION</h1>
+    </div>
+    <div class="row" style="text-align:center;">
+        <div class="col-lg-12"> <label class="dark-md-text">PBBI = [Number of ads your referrals watched] x [0.01-0.05 x the price of the ad]</label></div>
+    </div>
+</div>
+
+
+
+
+<div class="mycontainer container" style=" width: 100vw; padding-top: 2%; padding-bottom: 2%;">
+    <div id="pbbi">
+        <div class="row row-eq-height" style="padding-left: 10%; padding-right: 10%;">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3" style="padding-top:4%;">
+                <div style="text-align:left;">
+                    <h1 class="red-title">Example</h1>
+                </div>
+                @*<div style="text-align:left; padding-top:6%;">
+            <label class="dark-md-text">
+                PBBI is distributed on a daily basis and calculated as the following:
+            </label>
+        </div>*@
+                <div class="row" style="padding-top:8%;">
+                    <div class="col-md-12">
+                        <label class="dark-sm-text">
+                             You watched 15 ads
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="dark-sm-text">
+                             You have 6 referrals:
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-11">
+                        <label class="dark-sm-text">
+                             4 of them watched over 15 ads
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-11">
+                        <label class="dark-sm-text">
+                              2 of them watched 10 ads
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="dark-sm-text">
+                             You will receive:
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-11">
+                        <label class="dark-sm-text">
+                             80 x (1-5% of the ad’s price)
+                        </label>
+                    </div>
+                </div>
+                @*<div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-11">
+                        <label class="dark-sm-text">
+                            - + 2*10*(1-5% of the ad’s price)
+                        </label>
+                    </div>
+                </div>*@
+            </div>
+            <div class="col-lg-8" style="text-align:center; display: flex; align-items: center; flex-wrap: wrap;">
+                <img style="width: 70%; margin-left: auto;
+    margin-right: auto;
+    display: block;" src="~/images/graf_02.png">
+            </div>
+        </div>
+        @*<div class="row" style=" padding-bottom:4%; padding-left: 10%; padding-right: 10%;">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-2" style="text-align:left;">
+                <button class="btn btn-lg btn-block my-basic-button my-red-button float-left" type="button">Example</button>
+            </div>
+            <div class="col-lg-2" style="text-align:left;">
+                <button class="btn btn-lg btn-block my-basic-button my-red-button float-left" type="button">Calculator</button>
+            </div>
+            <div class="col-lg-7"></div>
+        </div>*@
+    </div>
+    <div id="pbbi-mobile">
+        <div class="row">
+            <div class="col-xs-12" style="text-align:center;">
+                <h1 class="red-title">Example</h1>
+            </div>
+        </div>
+        
+        <div class="row" style="padding-top:4%;">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-8" style="padding-left:8%;">
+                <div class="row" style="padding-top:2%;">
+                    <div class="col-md-12">
+                        <label class="dark-sm-text">
+                            You watched 15 ads
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="dark-sm-text">
+                            You have 6 referrals:
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="dark-sm-text" style="padding-left:20%;">
+                            4 of them watched over 15 ads
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="dark-sm-text" style="padding-left:20%;">
+                            2 of them watched 10 ads
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="dark-sm-text">
+                            You will receive:
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="dark-sm-text" style="padding-left:20%;">
+                            80 x (1-5% of the ad’s price)
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" style="text-align:center;">
+                <img style="width: 98%; margin-left: auto;
+    margin-right: auto;
+    display: block;" src="~/images/graf_02.png">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mycontainer container red-container" style="padding-top: 2%;">
+    <div id="profit-nav-div" class="row" style="text-align:center; padding-top: 2%;">
+        <h1 class="white-title">PROFIT SHARING</h1>
+    </div>
+    <div class="row" style="text-align:center; padding-top: 0.5%; padding-bottom:1.5%;">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <label class="white-md-text">
+                ADME will share its profit with the users for their interactions on the platform according to the following guidelines:
+            </label>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+    <div id="profit-sharing">
+        <div class="panel panel-default center" style="width:68%;">
+            <table class="mytable table table-bordered mytable-rounded">
+                <thead>
+                    <tr>
+                        <th scope="col">Number of validated users</th>
+                        <th scope="col">User’s share</th>
+                        <th scope="col">PBBI</th>
+                        <th scope="col">ADME’s share</th>
+                        <th scope="col">Token Payout</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><10.000</td>
+                        <td>10%</td>
+                        <td>1%</td>
+                        <td>89%</td>
+                        <td>$.002/token</td>
+                    </tr>
+                    <tr>
+                        <td>10.000+</td>
+                        <td>20%</td>
+                        <td>1%</td>
+                        <td>79%</td>
+                        <td>$.003/token</td>
+                    </tr>
+                    <tr>
+                        <td>100.000+</td>
+                        <td>30%</td>
+                        <td>2%</td>
+                        <td>68%</td>
+                        <td>$.004/token</td>
+                    </tr>
+                    <tr>
+                        <td>1.000.000+</td>
+                        <td>40%</td>
+                        <td>2%</td>
+                        <td>58%</td>
+                        <td>$.005/token</td>
+                    </tr>
+                    <tr>
+                        <td>10.000.000+</td>
+                        <td>50%</td>
+                        <td>3%</td>
+                        <td>47%</td>
+                        <td>$.006/token</td>
+                    </tr>
+                    <tr>
+                        <td>100.000.000+</td>
+                        <td>60%</td>
+                        <td>4%</td>
+                        <td>36%</td>
+                        <td>$.007/token</td>
+                    </tr>
+                    <tr>
+                        <td>1.000.000.000+</td>
+                        <td>70%</td>
+                        <td>5%</td>
+                        <td>25%</td>
+                        <td>$.0075/token</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="profit-sharing-mobile" style="text-align:center;">
+        <div class="panel panel-default flex-center panel-table-mobile">
+            <table class="mytable table table-bordered mytable-rounded">
+                <thead>
+                    <tr>
+                        <th scope="col">Number of validated users</th>
+                        <th scope="col">User’s share</th>
+                        <th scope="col">PBBI</th>
+                        <th scope="col">ADME’s share</th>
+                        <th scope="col">Token Payout</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><10.000</td>
+                        <td>10%</td>
+                        <td>1%</td>
+                        <td>89%</td>
+                        <td>$.002/token</td>
+                    </tr>
+                    <tr>
+                        <td>10.000+</td>
+                        <td>20%</td>
+                        <td>1%</td>
+                        <td>79%</td>
+                        <td>$.003/token</td>
+                    </tr>
+                    <tr>
+                        <td>100.000+</td>
+                        <td>30%</td>
+                        <td>2%</td>
+                        <td>68%</td>
+                        <td>$.004/token</td>
+                    </tr>
+                    <tr>
+                        <td>1.000.000+</td>
+                        <td>40%</td>
+                        <td>2%</td>
+                        <td>58%</td>
+                        <td>$.005/token</td>
+                    </tr>
+                    <tr>
+                        <td>10.000.000+</td>
+                        <td>50%</td>
+                        <td>3%</td>
+                        <td>47%</td>
+                        <td>$.006/token</td>
+                    </tr>
+                    <tr>
+                        <td>100.000.000+</td>
+                        <td>60%</td>
+                        <td>4%</td>
+                        <td>36%</td>
+                        <td>$.007/token</td>
+                    </tr>
+                    <tr>
+                        <td>1.000.000.000+</td>
+                        <td>70%</td>
+                        <td>5%</td>
+                        <td>25%</td>
+                        <td>$.0075/token</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <svg class="line" viewBox="00 00 150 10" preserveAspectRatio="none">
+    </svg>
+</div>
+<div class="mycontainer container white-container">
+    <div id="tokenomics-nav-div" class="row" style="text-align:center; padding-top: 2%;">
+        <h1 class="red-title">TOKENOMICS</h1>
+    </div>
+    <div class="row" style="text-align:center; padding-top: 0.5%;">
+        <div class="col-lg-12">
+            <label class="dark-md-text">
+                Introducing the Continuous Token Distribution model
+            </label>
+        </div>
+    </div>
+    <div class="row" style="text-align:center; padding-bottom:2%;">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <label class="dark-sm-text">
+                ADME introduces a new way to conduct a Token Offering by only distributing 3% of the total amount of tokens during the process. 97% of the tokens will be available for the users to be earned by watching advertisements, filling out surveys and visiting websites. ADME’s tokens are designed to be Utility tokens, which means by buying them, both users and advertisers will gain access to ADME’s services, thus the tokens WILL NOT represent any shares of the company.
+            </label>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default center" style="width:60%;">
+            <table class="mytable table table-bordered mytable-rounded">
+                @*<thead>
+                    <tr>
+                        <th colspan="5">Investment cap</th>
+                    </tr>
+                </thead>*@
+                <tbody>
+                    <tr>
+                        <td>Total supply:</td>
+                        <td>Token Sale</td>
+                        <td>Price</td>
+                    </tr>
+                    <tr>
+                        <td>20.000.000.000 A</td>
+                        <td>600.000.000 A</td>
+                        <td>100A = $1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row" style="padding-top:2%; padding-bottom:2%;">
+        <div class="col-lg-12" style="text-align:center; display: flex; align-items: center; flex-wrap: wrap;">
+            <img id="tokenomics-img" src="~/images/graf.png">
+        </div>
+    </div>
+</div>
+<div class="mycontainer container red-container" style="padding-top: 2%;">
+    <div id="team-nav-div" class="row" style="text-align:center; padding-top: 2%;">
+        <h1 class="white-title">TEAM</h1>
+    </div>
+
+    <div id="team">
+        <div class="row" style="padding-top: 3%;">
+            <div class="col-lg-4">
+                <div class="flip-box-team float-right">
+                    <div class="flip-box-team-inner">
+                        <div class="flip-box-team-front">
+                            <img style="width:100%;" src="~/images/Team_white2_tamas.png">
+                            <img class="linkedin-logo" src="~/images/linkedin.png"/>
+                        </div>
+                        <div class="flip-box-team-back">
+                            <img style="width:100%;" src="~/images/Team_white_tamas.png">
+                            <img id="linkedin-01" class="linkedin-logo linkedin-logo-back" src="~/images/linkedin.png"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="flip-box-team center">
+                    <div class="flip-box-team-inner">
+                        <div class="flip-box-team-front">
+                            <img style="width:100%;" src="~/images/Team_white2_greg.png">
+                            <img class="linkedin-logo" src="~/images/linkedin.png" />
+                        </div>
+                        <div class="flip-box-team-back">
+                            <img style="width:100%;" src="~/images/Team_white_greg.png">
+                            <img id="linkedin-02" class="linkedin-logo linkedin-logo-back" src="~/images/linkedin.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="flip-box-team float-left">
+                    <div class="flip-box-team-inner">
+                        <div class="flip-box-team-front">
+                            <img style="width:100%;" src="~/images/Team_white2_luminet.png">
+                            <img class="linkedin-logo" src="~/images/linkedin.png" />
+                        </div>
+                        <div class="flip-box-team-back">
+                            <img style="width:100%;" src="~/images/Team_white_luminet.png">
+                            <img id="linkedin-03" class="linkedin-logo linkedin-logo-back" src="~/images/linkedin.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 5%;">
+            <div class="col-lg-4">
+                <div class="flip-box-team float-right">
+                    <div class="flip-box-team-inner">
+                        <div class="flip-box-team-front">
+                            <img style="width:100%;" src="~/images/Team_white2_rahul.png">
+                            <img class="linkedin-logo" src="~/images/linkedin.png" />
+                        </div>
+                        <div class="flip-box-team-back">
+                            <img style="width:100%;" src="~/images/Team_white_rahul.png">
+                            <img id="linkedin-04" class="linkedin-logo linkedin-logo-back" src="~/images/linkedin.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="flip-box-team center">
+                    <div class="flip-box-team-inner">
+                        <div class="flip-box-team-front">
+                            <img style="width:100%;" src="~/images/Team_white2_adam.png">
+                            <img class="linkedin-logo" src="~/images/linkedin.png" />
+                        </div>
+                        <div class="flip-box-team-back">
+                            <img style="width:100%;" src="~/images/Team_white_adam.png">
+                            <img id="linkedin-05" class="linkedin-logo linkedin-logo-back" src="~/images/linkedin.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="flip-box-team float-left">
+                    <div class="flip-box-team-inner">
+                        <div class="flip-box-team-front">
+                            <img style="width:100%;" src="~/images/Team_white2_dori.png">
+                            <img class="linkedin-logo" src="~/images/linkedin.png" />
+                        </div>
+                        <div class="flip-box-team-back">
+                            <img style="width:100%;" src="~/images/Team_white_dori.png">
+                            <img id="linkedin-06" class="linkedin-logo linkedin-logo-back" src="~/images/linkedin.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="team-mobile">
+        <div id="team-left" class="left-white-arrow-overlay-team flex-center">
+            <img style="width:100%;" src="~/images/left_white_arrow.png" />
+        </div>
+        <div id="team-right" class="right-white-arrow-overlay-team flex-center">
+            <img style="width:100%;" src="~/images/right_white_arrow.png" />
+        </div>
+        <div id="team-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div style="text-align:center;">
+                        <div class="flip-box-team center">
+                            <div class="flip-box-team-inner">
+                                <div class="flip-box-team-front flex-center">
+                                    <img style="width:80%;" src="~/images/Team_white2_tamas.png">
+                                    <img class="linkedin-logo" src="~/images/linkedin.png" />
+                                </div>
+                                <div class="flip-box-team-back flex-center">
+                                    <img style="width:80%;" src="~/images/Team_white_tamas.png">
+                                    <img id="linkedin-01" class="linkedin-logo linkedin-logo-back" src="~/images/linkedin.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="text-align:center;">
+                        <div class="flip-box-team center">
+                            <div class="flip-box-team-inner">
+                                <div class="flip-box-team-front flex-center">
+                                    <img style="width:80%;" src="~/images/Team_white2_greg.png">
+                                    <img class="linkedin-logo" src="~/images/linkedin.png" />
+                                </div>
+                                <div class="flip-box-team-back flex-center">
+                                    <img style="width:80%;" src="~/images/Team_white_greg.png">
+                                    <img id="linkedin-02" class="linkedin-logo linkedin-logo-back" src="~/images/linkedin.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="text-align:center;">
+                        <div class="flip-box-team center">
+                            <div class="flip-box-team-inner">
+                                <div class="flip-box-team-front flex-center">
+                                    <img style="width:80%;" src="~/images/Team_white2_luminet.png">
+                                    <img class="linkedin-logo" src="~/images/linkedin.png" />
+                                </div>
+                                <div class="flip-box-team-back flex-center">
+                                    <img style="width:80%;" src="~/images/Team_white_luminet.png">
+                                    <img id="linkedin-03" class="linkedin-logo linkedin-logo-back" onclick="linkedInProfile(2)" src="~/images/linkedin.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="text-align:center;">
+                        <div class="flip-box-team center">
+                            <div class="flip-box-team-inner">
+                                <div class="flip-box-team-front flex-center">
+                                    <img style="width:80%;" src="~/images/Team_white2_rahul.png">
+                                    <img class="linkedin-logo" src="~/images/linkedin.png" />
+                                </div>
+                                <div class="flip-box-team-back flex-center">
+                                    <img style="width:80%;" src="~/images/Team_white_rahul.png">
+                                    <img id="linkedin-04" class="linkedin-logo linkedin-logo-back" onclick="linkedInProfile(3)" src="~/images/linkedin.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="text-align:center;">
+                        <div class="flip-box-team center">
+                            <div class="flip-box-team-inner">
+                                <div class="flip-box-team-front flex-center">
+                                    <img style="width:80%;" src="~/images/Team_white2_adam.png">
+                                    <img class="linkedin-logo" src="~/images/linkedin.png" />
+                                </div>
+                                <div class="flip-box-team-back flex-center">
+                                    <img style="width:80%;" src="~/images/Team_white_adam.png">
+                                    <img id="linkedin-05" class="linkedin-logo linkedin-logo-back" onclick="linkedInProfile(4)" src="~/images/linkedin.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="text-align:center;">
+                        <div class="flip-box-team center">
+                            <div class="flip-box-team-inner">
+                                <div class="flip-box-team-front flex-center">
+                                    <img style="width:80%;" src="~/images/Team_white2_dori.png">
+                                    <img class="linkedin-logo" src="~/images/linkedin.png" />
+                                </div>
+                                <div class="flip-box-team-back flex-center">
+                                    <img style="width:80%;" src="~/images/Team_white_dori.png">
+                                    <img id="linkedin-06" class="linkedin-logo linkedin-logo-back" onclick="linkedInProfile(5)" src="~/images/linkedin.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <svg class="line" viewBox="00 00 70 10" preserveAspectRatio="none">
+    </svg>
+</div>
+<div class="mycontainer container white-container">
+    <div id="roadmap-nav-div" class="row" style="text-align:center; padding-top: 2%;">
+        <h1 class="red-title">ROADMAP</h1>
+    </div>
+
+    <div id="roadmap">
+        <div class="row" style="padding-left:10%; padding-right:10%; padding-top: 3%;">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2">
+                <div class="lineBox" style="position: absolute;height:auto;left: 3%;top: 50%;width:100%;height: 50%;">
+                    <svg class="line" viewBox="00 00 150 100" preserveAspectRatio="none">
+                        <line x1="70" y1="00" x2="70" y2="100" style="stroke:black;stroke-width:2;"></line>
+                    </svg>
+                </div>
+                <div class="flex-square-small center-block">
+                    <div class="square-content center-block flex-square-small-content" style="background-color:#31b74d; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label style="font-family: Kelson; font-size:18px; font-weight: normal; color: #171025;">
+                    2018 Q1 - Research of the Blockchain technology and evaluation of potential use cases
+                </label>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row" style="padding-left:10%; padding-right:10%; padding-top: 3%;">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2">
+                <div class="lineBox" style="position: absolute;height:auto;left: 3%;top: 50%;width:100%;height: 50%;">
+                    <svg class="line" viewBox="00 00 150 100" preserveAspectRatio="none">
+                        <line x1="70" y1="00" x2="70" y2="100" style="stroke:black;stroke-width:2;"></line>
+                    </svg>
+                </div>
+                <div class="flex-square-small center-block">
+                    <div class="square-content center-block flex-square-small-content" style="background-color:#31b74d; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label style="font-family: Kelson; font-size:18px; font-weight: normal; color: #171025;">
+                    2018 Q4 - The inception of ADME, development of the product roadmap, white paper, database and blockchain architecture design
+                </label>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        @*<div class="row" style="padding-left:10%; padding-right:10%; padding-top: 3%;">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2">
+                <div class="lineBox" style="position: absolute;height:auto;left: 3%;top: 50%;width:100%;height: 50%;">
+                    <svg class="line" viewBox="00 00 150 100" preserveAspectRatio="none">
+                        <line x1="70" y1="00" x2="70" y2="100" style="stroke:black;stroke-width:2;"></line>
+                    </svg>
+                </div>
+                <div class="flex-square-small center-block">
+                    <div class="square-content center-block flex-square-small-content" style="background-color:#31b74d; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label style="font-family: Kelson; font-size:18px; font-weight: normal; color: #171025;">
+                    2019 Q2 - Start of the Fundraising process, accepting donations
+                </label>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>*@
+        <div class="row" style="padding-left:10%; padding-right:10%; padding-top: 5%;">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2">
+                <div class="lineBox" style="position: absolute;height:auto;left: 3%;top: 50%;width:100%;height: 50%;">
+                    <svg class="line" viewBox="00 00 150 100" preserveAspectRatio="none">
+                        <line x1="70" y1="00" x2="70" y2="100" style="stroke:black;stroke-width:2;"></line>
+                    </svg>
+                </div>
+                <div class="flex-square-small center-block">
+                    <div class="square-content center-block flex-square-small-content" style="background-color:#e5b42f; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label style="font-family: Kelson; font-size:18px; font-weight: normal; color: #171025;">
+                    Current objective: Raise 15 BTC to cover development and operation costs
+                </label>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row" style="padding-left:10%; padding-right:10%; padding-top: 3%;">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2">
+                <div class="lineBox" style="position: absolute;height:auto;left: 3%;top: 50%;width:100%;height: 50%;">
+                    <svg class="line" viewBox="00 00 150 50" preserveAspectRatio="none">
+                        <line x1="70" y1="00" x2="70" y2="50" style="stroke:black;stroke-width:2;"></line>
+                    </svg>
+                </div>
+                <div class="flex-square-small center-block">
+                    <div class="square-content center-block flex-square-small-content" style="background-color:#DB2C2F; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label style="font-family: Kelson; font-size:18px; font-weight: normal; color: #171025;">
+                    2019 H2  - Growing the community, developing partnerships
+                </label>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row" style="padding-left:10%; padding-right:10%; padding-top: 3%;">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2">
+                <div class="flex-square-small center-block">
+                    <div class="square-content center-block flex-square-small-content" style="background-color:#DB2C2F; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label style="font-family: Kelson; font-size:18px; font-weight: normal; color: #171025;">
+                    2020 - Main product roll out and Token Sale
+                </label>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+
+    <div id="roadmap-mobile">
+        <div class="row flex-center" style="padding-left:2%; padding-right:2%; padding-top: 3%;">
+            <div class="col-xs-3">
+                <label class="dark-sm-text">
+                    2018 Q1
+                </label>
+            </div>
+            <div class="col-xs-2">
+                <div class="lineBox" style="position: absolute;height:auto;left: 3%;top: 50%;width:100%;height: 50%;">
+                    <svg class="line" viewBox="00 00 150 200" preserveAspectRatio="none">
+                        <line x1="70" y1="00" x2="70" y2="200" style="stroke:black;stroke-width:3;"></line>
+                    </svg>
+                </div>
+                <div class="flex-square-small-mobile center-block">
+                    <div class="square-content center-block flex-square-small-content" style="background-color:#31b74d; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-7">
+                <label class="dark-sm-text">
+                    Research of the Blockchain technology and evaluation of potential use cases
+                </label>
+            </div>
+        </div>
+        <div class="row flex-center" style="padding-left:2%; padding-right:2%; padding-top: 3%;">
+            <div class="col-xs-3">
+                <label class="dark-sm-text">
+                    2018 Q4
+                </label>
+            </div>
+            <div class="col-xs-2">
+                <div class="lineBox" style="position: absolute;height:auto;left: 3%;top: 50%;width:100%;height: 50%;">
+                    <svg class="line" viewBox="00 00 150 200" preserveAspectRatio="none">
+                        <line x1="70" y1="00" x2="70" y2="200" style="stroke:black;stroke-width:3;"></line>
+                    </svg>
+                </div>
+                <div class="flex-square-small-mobile center-block">
+                    <div class="square-content center-block flex-square-small-content" style="background-color:#31b74d; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-7">
+                <label class="dark-sm-text">
+                    The inception of ADME, development of the product roadmap, white paper, database and blockchain architecture design
+                </label>
+            </div>
+        </div>
+        @*<div class="row flex-center" style="padding-left:2%; padding-right:2%; padding-top: 3%;">
+            <div class="col-xs-3">
+                <label class="dark-sm-text">
+                    2019 Q2
+                </label>
+            </div>
+            <div class="col-xs-2">
+                <div class="lineBox" style="position: absolute;height:auto;left: 3%;top: 50%;width:100%;height: 50%;">
+                    <svg class="line" viewBox="00 00 150 250" preserveAspectRatio="none">
+                        <line x1="70" y1="00" x2="70" y2="250" style="stroke:black;stroke-width:3;"></line>
+                    </svg>
+                </div>
+                <div class="flex-square-small-mobile center-block">
+                    <div class="square-content center-block flex-square-small-content" style="background-color:#31b74d; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-7">
+                <label class="dark-sm-text">
+                    Start of the Fundraising process, accepting donations
+                </label>
+            </div>
+        </div>*@
+        <div class="row flex-center" style="padding-left:2%; padding-right:2%; padding-top: 5%;">
+            <div class="col-xs-3">
+                <label class="dark-sm-text">
+                    Current objective
+                </label>
+            </div>
+            <div class="col-xs-2">
+                <div class="lineBox" style="position: absolute;height:auto;left: 3%;top: 50%;width:100%;height: 50%;">
+                    <svg class="line" viewBox="00 00 150 250" preserveAspectRatio="none">
+                        <line x1="70" y1="00" x2="70" y2="250" style="stroke:black;stroke-width:3;"></line>
+                    </svg>
+                </div>
+                <div class="flex-square-small-mobile center-block">
+                    <div class="square-content center-block flex-square-small-content" style="background-color:#e5b42f; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-7">
+                <label class="dark-sm-text">
+                    Raise 15 BTC to cover development and operation costs
+                </label>
+            </div>
+        </div>
+        <div class="row flex-center" style="padding-left:2%; padding-right:2%; padding-top: 3%;">
+            <div class="col-xs-3">
+                <label class="dark-sm-text">
+                    2019 H2
+                </label>
+            </div>
+            <div class="col-xs-2">
+                <div class="lineBox" style="position: absolute;height:auto;left: 3%;top: 50%;width:100%;height: 50%;">
+                    <svg class="line" viewBox="00 00 150 130" preserveAspectRatio="none">
+                        <line x1="70" y1="00" x2="70" y2="130" style="stroke:black;stroke-width:3;"></line>
+                    </svg>
+                </div>
+                <div class="flex-square-small-mobile center-block">
+                    <div class="square-content center-block flex-square-small-content" style="background-color:#DB2C2F; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-7">
+                <label class="dark-sm-text">
+                    Growing the community, developing partnerships
+                </label>
+            </div>
+        </div>
+        <div class="row flex-center" style="padding-left:2%; padding-right:2%; padding-top: 3%;">
+            <div class="col-xs-3">
+                <label class="dark-sm-text">
+                    2020
+                </label>
+            </div>
+            <div class="col-xs-2">
+                <div class="flex-square-small-mobile center-block">
+                    <div class="square-content center-block flex-square-small-content" style="background-color:#DB2C2F; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-7">
+                <label class="dark-sm-text">
+                    Main product roll out and Token Sale
+                </label>
+            </div>
+        </div>
+    </div>
+    <svg class="line" viewBox="00 00 180 10" preserveAspectRatio="none">
+    </svg>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

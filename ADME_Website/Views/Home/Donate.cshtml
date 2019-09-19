@@ -1,0 +1,511 @@
+﻿
+@{
+    ViewData["Title"] = "Donate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="mycontainer container white-container how-ellipse">
+    <div class="row" style="text-align:center; padding-top: 1%;">
+        <h1 style="font-family: Norwester; color: #DB2C2F;">DONATION</h1>
+        <h2 style="font-family: Norwester; color: #171025;">
+            The trust in the ICOs is broken.
+        </h2>
+    </div>
+    @*<div class="row" style="text-align:center; padding-top: 0%; display: flex; align-items:flex-start; justify-content:center;">
+            <h2 style="font-family: Norwester; color: #171025;">
+                The trust in ICO’s is broken.
+            </h2>
+        </div>*@
+    <div class="row" style="padding-left:8%; padding-right:8%; text-align:center; padding-bottom:0%; padding-top:0%;">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8" style="text-align:justify;">
+            <label class="dark-sm-text">
+                For this reason ADME will take a different approach. ADME will not hold a token generation event, until the core product is ready for the masses, because we want to EARN the TRUST of our users and our clients.
+            </label>
+            <label class="dark-sm-text" style="padding-top:1%;">
+                If you sympathize with ADME’s vision and would like to contribute to the development, feel free to donate us. ONLY those who donate will have the chance to participate in the first and second round of the token sale.
+
+            </label>
+            <label class="dark-sm-text" style="padding-top:1%;">
+                The incentives for the contributors are:
+
+            </label>
+            <div class="row" style="padding-top:1%; padding-left:8%;">
+                <div class="col-md-12">
+                    <label class="dark-sm-text">
+                        - Exclusive Participation in the first or second round of the Token Sales (depends on the amount of the donation)
+                    </label>
+                </div>
+            </div>
+            <div class="row" style="padding-left:8%; ">
+                <div class="col-md-12">
+                    <label class="dark-sm-text">
+                        - Access for the Beta Test
+                    </label>
+                </div>
+            </div>
+            <div class="row" style="padding-left:8%;">
+                <div class="col-md-12">
+                    <label class="dark-sm-text">
+                        - Invitation to the bi-weekly organized AMA, where the contributors can ask their questions
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+    <div class="row" style="padding-left:14%; padding-right:14%; text-align:center; padding-bottom:1%; padding-top:1%;">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <button type="button" data-toggle="modal" data-target="#donationModal" class="btn btn btn-lg btn-block my-basic-button my-red-button">Donate</button>
+        </div>
+        <div class="col-md-4"></div>
+
+    </div>
+    @*<div class="row" style="padding-left:8%; padding-right:8%;">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8" style="text-align:justify; padding-bottom:1%;">
+                <label class="dark-sm-text">
+                    IMPORTANT: To track the donators, please fill out a form of when and how much you donated, otherwise we won’t be able to provide access to the incentives.
+                </label>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>*@
+</div>
+
+<div class="mycontainer container red-container token-ellipse">
+    <div id="token-sale-nav-div" class="row" style="text-align:center; padding-top: 1%;">
+        <h1 style="font-family: Norwester; color: #ffffff;">
+            Token Sale
+        </h1>
+        <h2 style="font-family: Norwester; color: #ffffff;">
+            The first self-regulated UTO
+        </h2>
+    </div>
+    <div class="row" style="padding-left:8%; padding-right:8%;">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8" style="text-align:center; padding-bottom:1%;">
+            <label class="white-sm-text">
+                ADME regulates its token offering by limiting the amount of the tokens that can be purchased during the token sale process. This regulation is made to provide a fair participation for everyone who wants to get access to the permanent incentives.
+            </label>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+
+
+
+
+
+    @*<div class="panel panel-default center" style="width:60%;">
+        <table class="mytable table table-bordered mytable-rounded">
+            <thead>
+                    <tr>
+                        <th colspan="5">Investment cap</th>
+                    </tr>
+                </thead>
+            <tbody>
+                <tr>
+                    <td>Total supply:</td>
+                    <td>Token Sale</td>
+                    <td>Price</td>
+                </tr>
+                <tr>
+                    <td>20.000.000.000 A</td>
+                    <td>600.000.000 A</td>
+                    <td>100A = $1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>*@
+
+
+
+
+
+
+
+
+    <div class="row flex-center row-eq-height" style="padding-left:20%; padding-right:16%; padding-bottom:2%;">
+        <div class="col-lg-8 flex-center">
+            <div class="panel panel-default center" style="width:100%; margin-top:3%;">
+                <table class="mytable table table-bordered mytable-rounded">
+                    <thead>
+                        <tr>
+                            <th colspan="5">Investment cap</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td colspan="2">Users</td>
+                            <td colspan="2">Companies</td>
+                        </tr>
+                        <tr>
+                            <td>Minimum</td>
+                            <td>10.000 A</td>
+                            <td>$100</td>
+                            <td>100.000 A</td>
+                            <td>$1.000</td>
+                        </tr>
+                        <tr>
+                            <td>Maximum</td>
+                            <td>100.000 A</td>
+                            <td>$1.000</td>
+                            <td>2.000.000 A</td>
+                            <td>$20.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <img style="width:80%;" src="~/images/token_sale.png" />
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="mycontainer container white-container">
+    <div class="row" style="text-align:center; padding-top: 1%;">
+        <h1 style="font-family: Norwester; color: #DB2C2F;">Utility Token Offering Rounds</h1>
+    </div>
+    <div class="row" style="padding-left:8%; padding-right:8%;">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8" style="text-align:center; padding-bottom:1%;">
+            <label class="dark-sm-text" style="padding-top:2%; padding-bottom:2%; text-decoration:underline;">
+                The UTO will be divided into 3 rounds
+            </label>
+            <label class="dark-sm-text">
+                The First and Second round of the Utility Token Offering will be reserved for the contributors. They will be divided into two groups based on the amount of the donations.
+                The first round will contain the top 50% of the contributors, the second round will contain the other half. The tokens that were not purchased in the first round of the UTO will be added to the second round.
+                Similarly, the tokens that were left from the first and second round, will be added to the third round, which will be open to the public.
+
+            </label>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+    <div class="row" style="padding-left:8%; padding-right:8%;  padding-top: 1%;">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8" style="text-align:center; padding-bottom:1%;">
+            <div class="row" style="padding-left:8%; padding-right:8%;  padding-top: 1%;">
+                <div class="col-lg-12" style="text-align:center; padding-bottom:1%;">
+                    <label class="dark-sm-text" style="text-decoration:underline;">
+                        First Round
+                    </label>
+                </div>
+            </div>
+            <label class="dark-sm-text">
+                200.000.000 A will be available for purchase for the top 50% of the contributors
+            </label>
+            <div class="row" style="padding-left:8%; padding-right:8%;  padding-top: 1%;">
+                <div class="col-lg-12" style="text-align:center; padding-bottom:1%;">
+                    <label class="dark-sm-text" style="text-decoration:underline;">
+                        Second Round
+                    </label>
+                </div>
+            </div>
+            <label class="dark-sm-text">
+                200.000.000 A + the remaining tokens of the First round for the other 50% of the contributors
+            </label>
+            <div class="row" style="padding-left:8%; padding-right:8%;  padding-top: 1%;">
+                <div class="col-lg-12" style="text-align:center; padding-bottom:1%;">
+                    <label class="dark-sm-text" style="text-decoration:underline;">
+                        Third Round
+                    </label>
+                </div>
+            </div>
+            <label class="dark-sm-text">
+                200.000.000 A + the remaining tokens of the First and Second round will be available for the public
+            </label>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="mycontainer container white-container">
+    <div class="row" style="text-align:center; padding-top: 1%;">
+        <h1 style="font-family: Norwester; color: #DB2C2F;">UTO Incentives</h1>
+    </div>
+    <div class="row" style="padding-left:8%; padding-right:8%;">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8" style="text-align:justify; padding-bottom:1%;">
+            <label class="dark-sm-text">
+                ADME will provide permanent incentives for the users and the companies who are participating in the token sales. These incentives are attached to the users or companies accounts and are the following:
+            </label>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+
+
+
+    <div class="panel panel-default center" style="width:60%;">
+        <table class="mytable table table-bordered mytable-rounded">
+            @*<thead>
+                    <tr>
+                        <th colspan="5">Investment cap</th>
+                    </tr>
+                </thead>*@
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>Users</td>
+                    <td>Companies</td>
+                </tr>
+                <tr>
+                    <td>1st Round</td>
+                    <td>+12% Profit Share and +3% PBBI</td>
+                    <td>+15% discount</td>
+
+                </tr>
+                <tr>
+                    <td>2nd Round</td>
+                    <td>+8% Profit Share and +2% PBBI</td>
+                    <td>+10% discount</td>
+                </tr>
+                <tr>
+                    <td>3rd Round</td>
+                    <td>+4% Profit Share and +1% PBBI</td>
+                    <td>+5% discount</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal fade" id="donationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="row">
+                        <div class="col-lg-11" style="text-align:left;">
+                            <label class="dark-sm-text" style="color: #DB2C2F;">
+                                Donation
+                            </label>
+                        </div>
+                        <div class="col-lg-1" style="text-align:right;">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row" style="padding-left:2%; padding-right:2%;">
+                        <div class="col-lg-12" style="text-align:justify; padding-bottom:1%;">
+                            <label class="dark-sm-text">
+                                Thank you for donating to help accelerate the project.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left:2%; padding-right:2%;">
+                        <div class="col-lg-12" style="text-align:center; padding-bottom:1%;">
+                            <label class="dark-sm-text" style="color: #DB2C2F;">
+                                IMPORTANT! Please read it carefully.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left:2%; padding-right:2%;">
+                        <div class="col-lg-12" style="text-align:justify; padding-bottom:1%;">
+                            <label class="dark-sm-text" style="padding-top:1%;">
+                                The provided email address will be linked to the public key and you WILL NOT be able to use the same public key with a different email address. This rule is made to eliminate fraudulent activities.
+                            </label>
+                            <label class="dark-sm-text" style="padding-top:1%;">
+                                Make sure to fill out the fields below BEFORE you are sending the donation. IF we receive two different forms, that contains the same public key, we will ALWAYS consider the first one as TRUSTED.
+                            </label>
+                            <label class="dark-sm-text" style="padding-top:1%;">
+                                Please DO NOT send donations from exchanges.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left:2%; padding-right:2%;">
+                        <div class="col-lg-12" style="text-align:justify; padding-bottom:1%;">
+                            <form>
+                                <div class="row" style="padding-left:2%; padding-right:2%;">
+                                    <div class="col-lg-6" style="text-align:center; padding-bottom:1%;">
+                                        <label class="dark-sm-text" style="padding-top:1%;">
+                                            I am a future user/advertiser.
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-6" style="text-align:left; padding-bottom:1%;">
+                                        @*<input type="checkbox" data-toggle="toggle" data-on="User" data-off="Advertiser">*@
+                                        <select class="form-control" id="user-adv-input" name="Usertype">
+                                            <option value="" selected disabled>Please choose...</option>
+                                            <option value="1">User</option>
+                                            <option value="2">Advertiser</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-left:2%; padding-right:2%;">
+                                    <div class="col-lg-6" style="text-align:center; padding-bottom:1%;">
+                                        <label class="dark-sm-text" style="padding-top:1%;">
+                                            E-mail address:
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-6" style="text-align:left; padding-bottom:1%;">
+                                        @*<input type="text">*@
+                                        <input type="email" class="form-control" id="email-input-donate" name="Email">
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-left:2%; padding-right:2%;">
+                                    <div class="col-lg-6" style="text-align:center; padding-bottom:1%;">
+                                        <label class="dark-sm-text" style="padding-top:1%;">
+                                            Amount:
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-6" style="text-align:left; padding-bottom:1%;">
+                                        <div class='input-group'>
+                                            <input type='text' class="form-control" id='amount-donate' name="Amount" />
+                                            <span class="input-group-addon" style="padding:3.5%;">
+                                                <span class="glyphicon" style="font-family:Norwester; ">BTC</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="padding-left:2%; padding-right:2%;">
+                                    <div class="col-lg-6" style="text-align:center; padding-bottom:1%;">
+                                        <label class="dark-sm-text" style="padding-top:1%;">
+                                            Exact time of contribution:
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-6" style="text-align:left; padding-bottom:1%;">
+                                        <div class='input-group date'>
+                                            <input type='text' class="form-control" id='time-donate' name="DonateTime" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-left:2%; padding-right:2%;">
+                                    <div class="col-lg-6" style="text-align:center; padding-bottom:1%;">
+                                        <label class="dark-sm-text" style="padding-top:1%;">
+                                            Your Public key:
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-6" style="text-align:left; padding-bottom:1%;">
+                                        <input type="text" class="form-control" id="key-input-donate" name="Wallet">
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-left:2%; padding-right:2%;">
+                                    <div class="col-lg-12 flex-center" style="text-align:left; padding-bottom:1%;">
+                                        <label class="dark-sm-text" style="padding-top:1%;">
+                                            BTC address:
+                                            13cJEPnwWHC9xdDLG75ojXfzMHYBmjVF8y
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    @*<button type="button" class="btn btn-primary">Save changes</button>*@
+                    <div class="row" style="padding-left:14%; padding-right:14%; text-align:center; padding-bottom:1%; padding-top:1%;">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <button id="donate-btn" type="button" class="btn btn btn-lg btn-block my-basic-button my-red-button">Donate</button>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="row">
+                        <div class="col-lg-11" style="text-align:left;">
+                            
+                        </div>
+                        <div class="col-lg-1" style="text-align:right;">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row" style="padding-left:2%; padding-right:2%;">
+                        <div class="col-lg-12" style="text-align:justify; padding-bottom:1%;">
+                            <label class="dark-sm-text">
+                                Thank you for your donation!
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row" style="padding-left:14%; padding-right:14%; text-align:center; padding-bottom:1%; padding-top:1%;">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <button id="close-success-btn" type="button" data-dismiss="modal" class="btn btn btn-lg btn-block my-basic-button my-red-button">Close</button>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+@section Scripts
+    {
+<script>
+    var _val = localStorage.getItem("valueKey");
+    console.log(_val);
+    if (_val === "true") {
+        $('html, body').animate({
+            scrollTop: $("#token-sale-nav-div").offset().top- 130
+        }, 1000);
+    }
+
+    value = "false";
+    localStorage.setItem("valueKey", value);
+</script>
+}
+
