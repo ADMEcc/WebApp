@@ -73,20 +73,9 @@ function setHover() {
         });
 }
 
-
-//function download(file) {
-//    window.location = $this.attr('href');
-//}
-
-
-
 $(document).ready(function () {
-    //$('a[data-auto-download]').click(function () {
-    //    window.location = $this.attr('href');
-    //});
     pulse();
     setHover();
-
 
     $("#offering-nav").click(function (event) {
         event.preventDefault();
@@ -144,14 +133,6 @@ $(document).ready(function () {
         }, 1000);
     });
 
-    //$("#token-sale-nav").click(function (event) {
-    //    event.preventDefault();
-    //    var value = "true";
-    //    localStorage.setItem("valueKey", value);
-
-    //    window.location.href = "/Home/Donate";
-    //});
-
     $("#token-sale-nav-xs").click(function (event) {
         event.preventDefault();
         var value = "true";
@@ -159,14 +140,6 @@ $(document).ready(function () {
 
         window.location.href = "/Home/Donate";
     });
-
-    //$("#tel-mobile").click(function (event) {
-    //    window.open('https://t.me/admecc', '_blank');
-    //});
-
-    //$("#in-mobile").click(function (event) {
-    //    window.open('https://www.linkedin.com/company/adme-cc/', '_blank');
-    //});
 
     $("#tel-pc").click(function (event) {
         window.open('https://t.me/admecc', '_blank');
@@ -183,8 +156,6 @@ $(document).ready(function () {
     $("#git-pc").click(function (event) {
         window.open('https://github.com/ADMEcc/WebApp', '_blank');
     });
-   
-
 
     $("#in-mobile").on('click', function () {
         window.open('https://www.linkedin.com/company/adme-cc/', '_blank');
@@ -201,8 +172,6 @@ $(document).ready(function () {
     $("#git-mobile").on('click', function () {
         window.open('https://github.com/ADMEcc/WebApp', '_blank');
     });
-
-
 
     $("#nav-logo").click(function (event) {
         window.location.href = '/Home/Index';
